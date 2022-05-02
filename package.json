@@ -1,7 +1,7 @@
 {
   "name": "color-api",
   "version": "0.1.0",
-  "homepage": "https://hrtjsingh.github.io/react-app",
+  "homepage": "https://hrtjsingh.github.io/color-get",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
