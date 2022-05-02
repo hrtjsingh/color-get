@@ -17,7 +17,6 @@ export default function App() {
     let mainData = allData.map((color, i) => {
       return (
         <div key={i} style={{ background: `${color.hex}` }}>
-          <h2>{color.name}</h2>
           <h2>{color.hex}</h2>
         </div>
       );
