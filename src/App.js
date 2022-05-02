@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import Masonry from "react-masonry-css";
 
-import "./styles.css";
+import './App.css';
 
 export default function App() {
   const ref = useRef();
