@@ -10,26 +10,35 @@ export default function App() {
   const [renderData, setRenderData] = useState(false);
   const search = async () => {
     let val = ref.current.value;
-    const res = await axios.get(
-      `https://api.color.pizza/v1/names/?name=${val}`
-    );
-    let allData = res.data.colors;
-    let mainData = allData.map((color, i) => {
-      return (
-        <div key={i} style={{ background: `${color.hex}` }}>
-          <h2>{color.hex}</h2>
-        </div>
+    if(val!==""){
+      const res = await axios.get(
+        `https://api.color.pizza/v1/names/?name=${val}`
       );
-    });
-    setRenderData(
-      <Masonry
-        breakpointCols={3}
-        className="my-masonry-grid"
-        columnClassName="my-masonry-grid_column"
-      >
-        {mainData}
-      </Masonry>
-    );
+      let allData = res.data.colors;
+      if(allData.length>0){
+      let mainData = allData.map((color, i) => {
+        return (
+          <div key={i} style={{ background: `${color.hex}` }}>
+            <h2>{color.hex}</h2>
+          </div>
+        );
+      });
+      setRenderData(
+        <Masonry
+          breakpointCols={3}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
+          {mainData}
+        </Masonry>
+      );
+      }else{
+        setRenderData("No Data Found")
+      }
+    }else{
+      setRenderData("No Data Found")
+    }
+   
     setResults(true);
   };
   useEffect(() => {}, [renderData]);
