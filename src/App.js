@@ -6,9 +6,9 @@ export default function App() {
   const [results, setResults] = useState(false);
   const [renderData, setRenderData] = useState(false);
   const search = async () => {
-    let val = ref.current.value;
-    if (val !== "") {
-      setRenderData(<Cards input={val} />)
+    let inputValue = ref.current.value;
+    if (inputValue !== "") {
+      setRenderData(<Cards input={inputValue} />)
     } else {
       setRenderData("No Data Found")
     }

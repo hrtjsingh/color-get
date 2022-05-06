@@ -11,4 +11,4 @@ function Card(props) {
 export default Card
 Card.propTypes = {
     color: PropTypes.any
-  };
+};

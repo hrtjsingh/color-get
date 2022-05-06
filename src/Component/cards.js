@@ -11,8 +11,8 @@ function Cards(props) {
         mainData = getColors.map((color, i) => (
             <Card color={color} key={i} />
         ))
-    }else{
-        mainData=`No Data Founf For ${input}`
+    } else {
+        mainData = `No Data Founf For ${input}`
     }
     return (
         <Masonry
@@ -28,4 +28,4 @@ export default Cards
 
 Cards.propTypes = {
     input: PropTypes.string
-  };
+};
