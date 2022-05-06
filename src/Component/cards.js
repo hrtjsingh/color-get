@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from './card'
+import PropTypes from 'prop-types';
 import useGetColor from '../Hooks/useGetColor'
 import Masonry from "react-masonry-css";
 function Cards(props) {
@@ -24,3 +25,7 @@ function Cards(props) {
     )
 }
 export default Cards
+
+Cards.propTypes = {
+    input: PropTypes.string
+  };
